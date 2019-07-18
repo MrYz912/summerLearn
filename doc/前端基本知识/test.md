@@ -1,0 +1,57 @@
+# 一、新增的主体结构元素
+
+## 1.article元素
+
+### 解释：
+
+![1563438172477](C:\Users\yz\AppData\Roaming\Typora\typora-user-images\1563438172477.png)
+
+### 用法：
+
+```html
+<article>
+	...
+</article>
+```
+
+- 可以嵌套使用
+- 可以用来表示插件
+
+## 2.section元素
+
+### 解释：
+
+![1563439873588](C:\Users\yz\AppData\Roaming\Typora\typora-user-images\1563439873588.png)
+
+### 用法：
+
+```html
+<section>
+	...
+</section>
+```
+
+- 将页面上的内容进行分块
+  - 需要有标题和内容
+- 不要作为设置样式的页面容器、
+- 和article可以互相嵌套
+
+## 3.nav元素
+
+### 解释：
+
+![1563444926915](C:\Users\yz\AppData\Roaming\Typora\typora-user-images\1563444926915.png)
+
+### 用法：
+
+```html
+<nav>
+	...
+</nav>
+```
+
+- 应用场景
+  - 传统导航栏
+  - 侧边栏导航
+  - 页内导航
+  - 翻页操作
