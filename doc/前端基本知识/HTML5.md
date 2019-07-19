@@ -4,7 +4,7 @@
 
 ### 解释：
 
-![1563438172477](C:\Users\yz\AppData\Roaming\Typora\typora-user-images\1563438172477.png)
+![](assets/1563438172477.png)
 
 ### 用法：
 
@@ -21,7 +21,7 @@
 
 ### 解释：
 
-![1563439873588](C:\Users\yz\AppData\Roaming\Typora\typora-user-images\1563439873588.png)
+![](assets/1563439873588.png)
 
 ### 用法：
 
@@ -40,7 +40,7 @@
 
 ### 解释：
 
-![1563444926915](C:\Users\yz\AppData\Roaming\Typora\typora-user-images\1563444926915.png)
+![](assets/1563444926915.png)
 
 ### 用法：
 
