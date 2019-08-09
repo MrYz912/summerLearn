@@ -287,11 +287,81 @@
 
 ![1564405132131](assets/1564405132131.png)
 
+# 六、音频视频
 
+## 1.音频播放
 
+![1564578776288](assets/1564578776288.png)
 
+如果不想用浏览器的音频播放器，可以用自己的javascript代码代替control
 
+## 2.视频播放
 
+![1564579873787](assets/1564579873787.png)
+
+# 七、拖放
+
+## 1.拖放
+
+![1564649718586](assets/1564649718586.png)
+
+## 2.拖放本地资源
+
+见代码
+
+# 八、canvas标签的使用
+
+## 1.创建canvas标签
+
+- 通过HTML创建
+- 通过javascript创建
+  - document.body.innerHTML
+
+## 2.绘制图
+
+通过API中提供的方法来绘制
+
+```javascript
+var canvas = document.getElementById('canvas');
+var context = canvas.getContext('2d');
+```
+
+## 3.绘制圆
+
+- 开始创建路径
+
+```javascript
+context.beginPath();
+```
+
+- 创建图形的路径
+
+```javascript
+context.arc(...);
+```
+
+- 关闭路径
+
+```javascript
+context.closePath();
+context.fill();
+```
+
+- 设定绘制的样式，调用绘制的方法
+
+## 4.绘制渐变图形
+
+- 创建一个沿参数坐标指定的直线的渐变
+
+```javascript
+var gradient = context.createLinearGradient(x0, y0, x1, y1);
+```
+
+- 添加一个由偏移值和颜色值指定的断点到渐变
+
+```javascript
+gradient.addColorStop(offset,color);
+```
 
 
 
