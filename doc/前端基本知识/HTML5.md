@@ -363,11 +363,25 @@ var gradient = context.createLinearGradient(x0, y0, x1, y1);
 gradient.addColorStop(offset,color);
 ```
 
+## 5.绘制变形图形
 
+- 平移
 
+```javascript
+context.translate(x,y)//x为原点移动的大小
+```
 
+- 缩放
 
+```javascript
+context.scale(x,y)//x为x的缩放倍数
+```
 
+- 旋转
+
+```javascript
+context.rotate(deg)//deg为旋转的角度
+```
 
 
 
