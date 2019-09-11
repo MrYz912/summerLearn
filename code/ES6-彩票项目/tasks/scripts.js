@@ -21,7 +21,7 @@ gulp.task( "scripts",() => {
         .pipe(named())
         .pipe(gulpwebpack({
             module:{
-                loaders:[{
+                loader:[{
                     test:/\.js$/,
                     loader: "babel"
                 }]
