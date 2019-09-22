@@ -49,9 +49,20 @@
 
 /***/ }),
 /* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	const Test = __webpack_require__(2);
+	Test.test();
+
+/***/ }),
+/* 2 */
 /***/ (function(module, exports) {
 
-	import "./class/lesson1";
+	exports.test = function test(){
+	    let a = 1;
+	    console.log(a);
+	}
+
 
 /***/ })
 /******/ ]);
