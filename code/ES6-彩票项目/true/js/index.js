@@ -1,1 +1,3 @@
-import "./class/lesson1"
+const Test = require("./class/lesson1");
+
+Test.test();
