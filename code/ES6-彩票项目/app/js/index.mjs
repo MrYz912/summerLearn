@@ -1,1 +1,0 @@
-import "./class/lesson1.mjs";
