@@ -1,3 +1,3 @@
-const Test = require("./class/lesson2");
+const Test = require("./class/lesson1");
 
 Test.test();
