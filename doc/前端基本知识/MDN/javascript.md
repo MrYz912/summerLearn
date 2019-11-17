@@ -44,3 +44,56 @@ Person.prototype.farewell = function() {
 
 一种极其常见的对象定义模式是，在构造器（函数体）中定义属性、在 `prototype` 属性上定义方法。
 
+
+
+# 二、继承
+
+## 1.原型式的继承
+
+继承的对象并不是通过复制而来，而是通过原型链继承。
+
+通过调用`call()`函数，可以实现继承。
+
+使用`call()`方法调用父构造函数：
+
+```js
+function Product(name, price) {
+  this.name = name;
+  this.price = price;
+}
+
+function Food(name, price) {
+  Product.call(this, name, price);
+  this.category = 'food';
+}
+```
+
+
+
+如果继承的构造函数不从传入的参数中获取其属性值，则不需要在`call()`中为其指定其他参数。
+
+```js
+function Brick() {
+  this.width = 10;
+  this.height = 20;
+}
+
+function BlueGlassBrick() {
+  Brick.call(this);
+
+  this.opacity = 0.5;
+  this.color = 'blue';
+}
+```
+
+
+
+## 2.设置原型和构造器引用
+
+定义了一个新的构造器，这个构造器默认有一个空的原型属性。让`Teacher()`从`Person()`的原型对象里继承方法。
+
+```js
+Teacher.prototype = Object.create(Person.prototype);
+Teacher.prototype.constructor = Teacher;
+```
+
