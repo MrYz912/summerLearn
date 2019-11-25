@@ -21,14 +21,22 @@ function randomColor() {
          random(0, 255) + ')';
 }
 
-function Ball(x, y, velX, velY, color, size) {
+function Shape(x,y,velX,velY,exists) {
   this.x = x;
   this.y = y;
-  this.velX = velX;//水平速度
-  this.velY = velY;//竖直速度
+  this.velX = velX;
+  this.velY = velY;
+  this.exists = exists;
+}
+
+function Ball(x, y, velX, velY, color, size,exists) {
+  Shape.call(this,x,y,velX,velY,exists);
   this.color = color;
   this.size = size;
 }
+
+Ball.prototype = Object.create(Shape.prototype);
+Ball.prototype.constructor = Ball;
 
 Ball.prototype.draw = function() {//画小球
   ctx.beginPath();
@@ -72,9 +80,76 @@ Ball.prototype.collisionDetect = function() {
   }
 }
 
+function EvilCircle(x,y,exists) {
+  Shape.call(this, x, y, 20, 20, exists);
+  this.color = 'white';
+  this.size = 10;
+}
+
+EvilCircle.prototype = Object.create(Shape.prototype);
+EvilCircle.prototype.constructor = EvilCircle;
+
+EvilCircle.prototype.draw = function() {
+  ctx.beginPath();
+  ctx.lineWidth = 3;
+  ctx.strokeStyle = this.color;
+  ctx.arc(this.x,this.y, this.size,0,2*Math.PI);
+  ctx.stroke();  
+}
+
+EvilCircle.prototype.checkBounds = function() {
+  if((this.x + this.size) > width){//右边缘
+    this.x = width-this.size;
+  }
+
+  if((this.x - this.size) <= 0){//左边缘
+    this.x = this.size;
+  }
+
+  if((this.y + this.size) > height){
+    this.y = height - this.size;
+  }
+
+  if((this.y - this.size) <= 0){
+    this.y = this.size;
+  }
+}
+
+EvilCircle.prototype.setControls = function() {
+  window.onkeydown = e => {
+    if (e.key === 'a') {
+      this.x -= this.velX;
+    } else if (e.key === 'd') {
+      this.x += this.velX;
+    } else if (e.key === 'w') {
+      this.y -= this.velY;
+    } else if (e.key === 's') {
+      this.y += this.velY;
+    }
+  }
+}
+
+EvilCircle.prototype.collisionDetect = function() {
+  for (var j = 0; j < balls.length; j++) {
+    if (!balls[j].exists) {
+      var dx = this.x - balls[j].x;
+      var dy = this.y - balls[j].y;
+      var distance = Math.sqrt(dx * dx + dy * dy);
+
+      if (distance < this.size + balls[j].size) {
+        balls[j].exists = false;
+      }
+    }
+  }
+}
+
 function loop() {
   ctx.fillStyle = 'rgba(0,0,0,0.25)';
   ctx.fillRect(0,0,width,height);
+
+  evil.draw();
+  evil.checkBounds();
+  evil.collisionDetect();
 
   while(balls.length < 70){
     var size = random(10,20);
@@ -84,17 +159,31 @@ function loop() {
       random(-5,5),
       random(-5,5),
       randomColor(),
-      size
+      size,
+      true
     );
     balls.push(ball);
   }
 
   for (var i = 0;i < balls.length;i++){
-    balls[i].draw();
-    balls[i].update();
+    if(balls[i].exists){
+      balls[i].draw();
+      balls[i].update();
+      balls[i].collisionDetect();      
+    }
   }
-
   requestAnimationFrame(loop);
 }
 
+var ran = random(10,20);
+var evil = EvilCircle(      
+  random(0+ran,width-ran),
+  random(0+ran,height-ran),
+  true
+);
+
+var p = document.createElement('p');
+document.body.appendChild(p);
+
+evil.setControls();
 loop();

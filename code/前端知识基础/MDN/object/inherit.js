@@ -14,7 +14,6 @@ Person.prototype.greeting = function() {
 
 function Teacher(first,last,age, gender,interests,subject){
     Person.call(this,first, last, age, gender,interests);//call方法:在一个子构造函数中，你可以通过调用父构造函数的 call 方法来实现继承
-
     this.subject = subject;
 }
 
