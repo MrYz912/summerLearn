@@ -131,7 +131,7 @@ EvilCircle.prototype.setControls = function() {
 
 EvilCircle.prototype.collisionDetect = function() {
   for (var j = 0; j < balls.length; j++) {
-    if (!balls[j].exists) {
+    if (balls[j].exists===true) {
       var dx = this.x - balls[j].x;
       var dy = this.y - balls[j].y;
       var distance = Math.sqrt(dx * dx + dy * dy);
@@ -146,10 +146,6 @@ EvilCircle.prototype.collisionDetect = function() {
 function loop() {
   ctx.fillStyle = 'rgba(0,0,0,0.25)';
   ctx.fillRect(0,0,width,height);
-
-  evil.draw();
-  evil.checkBounds();
-  evil.collisionDetect();
 
   while(balls.length < 70){
     var size = random(10,20);
@@ -172,11 +168,16 @@ function loop() {
       balls[i].collisionDetect();      
     }
   }
+
+  evil.draw();
+  evil.checkBounds();
+  evil.collisionDetect();
+
   requestAnimationFrame(loop);
 }
 
 var ran = random(10,20);
-var evil = EvilCircle(      
+var evil = new EvilCircle(      
   random(0+ran,width-ran),
   random(0+ran,height-ran),
   true
