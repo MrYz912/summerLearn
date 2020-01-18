@@ -76,7 +76,7 @@
 
 
 
-### 节点属性：
+### 节点属性
 
 DOM 节点有三个重要的属性 ：
 
@@ -102,5 +102,72 @@ DOM 节点有三个重要的属性 ：
         document.write(text[i].nodeType+"<br>");
     }
   </script>
+```
+
+
+
+### 访问子节点
+
+访问选定元素节点下的所有子节点的列表，返回的值可以看作是一个数组
+
+**语法：**
+
+`elementNode.childNodes`
+
+**例子：**
+
+```html
+<div>
+  javascript  
+  <p>javascript</p>
+  <div>jQuery</div>
+  <h5>PHP</h5>
+</div>
+<script type="text/javascript">
+  var x=document.getElementsByTagName("div")[0].childNodes;
+  for(let i=0;i<x.length;i++){
+      document.write("节点属性："+x[i].nodeType+"<br />");
+  }
+</script>
+```
+
+
+
+**子节点第一和最后一项**
+
+**语法：**
+
+`node.firstChild`
+
+`node.lastChild`
+
+**例子：**
+
+```html
+<div id="con">
+  <p>javascript</p>
+  <div>jQuery</div>
+  <h5>PHP</h5>
+</div>
+<script type="text/javascript">
+  //输出的是p标签前面的换行符
+  var x=document.getElementById("con");
+  document.write("第一个子节点："+x.firstChild+"<br />");//第一个子节点：[object Text]
+  document.write("最后一个子节点："+x.lastChild+"<br />");//最后一个子节点：[object Text]
+</script>
+```
+
+```html
+<div id="con">
+  <p>javascript</p>
+  <div>jQuery</div>
+  <h5>PHP</h5>
+</div>
+<script type="text/javascript">
+  //输出的是真正想要的结果
+  var x=document.getElementById("con");
+  document.write("第一个子节点："+x.firstElementChild+"<br />");//第一个子节点：[object HTMLParagraphElement]
+  document.write("最后一个子节点："+x.lastElementChild+"<br />");//第一个子节点：[object HTMLParagraphElement]
+</script>
 ```
 
