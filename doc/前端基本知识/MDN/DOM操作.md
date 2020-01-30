@@ -211,3 +211,65 @@ DOM 节点有三个重要的属性 ：
 </script> 
 ```
 
+
+
+**兄弟节点**
+
+后面的节点：
+
+`nodeObject.nextSibling`
+
+前面的节点：
+
+`nodeObject.previousSibling`
+
+
+
+### 插入节点
+
+在指定节点的最后一个子节点列表之后添加一个新的子节点
+
+**语法：**
+
+`appendChild(newnode)`
+
+**例子：**
+
+<img src="/Users/yz/Library/Application Support/typora-user-images/image-20200130155842541.png" alt="image-20200130155842541" style="zoom:50%;" />
+
+
+
+**插入节点insertBefore()**
+
+在已有的子节点前插入一个新的子节点
+
+**语法：**
+
+`insertBefore(newnode,node)`
+
+**参数:**
+
+newnode: 要插入的新节点。
+
+node: 指定此节点前插入节点。
+
+
+
+### 删除节点
+
+removeChild() 方法从子节点列表中删除某个节点。如删除成功，此方法可返回被删除的节点，如失败，则返回 NULL。
+
+**语法：**
+
+`nodeObject.removeChild(node)`
+
+**例子：**通过清除按钮把节点清除
+
+<img src="/Users/yz/Library/Application Support/typora-user-images/image-20200130172406062.png" alt="image-20200130172406062" style="zoom:50%;" />
+
+
+
+注意：这里应该使用反向遍历，因为removeChild()方法是动态删除的，使用反向遍历能确保每次删除的都是最后一个，而使用正向遍历则因为每次删除，元素对应的下标都在变化，所以不能成功删除。
+
+
+
