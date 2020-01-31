@@ -273,3 +273,47 @@ removeChild() 方法从子节点列表中删除某个节点。如删除成功，
 
 
 
+### 替换节点
+
+通过`repalceChild()`方法替换子节点,返回被替换对象的引用。
+
+**语法：**
+
+`node.replaceChild(newnode,oldnode)`
+
+**例子：**通过replaceChild()实现将b标签换成i标签
+
+<img src="/Users/yz/Library/Application Support/typora-user-images/image-20200131174434271.png" alt="image-20200131174434271" style="zoom:50%;" />
+
+
+
+### 创建节点
+
+**创建元素节点**
+
+使用createElement()能创建元素节点。此方法返回一个Element对象。
+
+**语法：**
+
+`document.createElement(tagName)；`  `tagName`用来指明创建元素的类型
+
+**例子：**在HTML文档中创建一个慕课网的链接，并设置属性
+
+<img src="/Users/yz/Library/Application Support/typora-user-images/image-20200131215758809.png" alt="image-20200131215758809" style="zoom:50%;" />
+
+
+
+**创建文本节点**
+
+使用createTextNode()能创建新的文本节点，返回新创建的Text节点
+
+**语法：**
+
+`document.createTextNode(data);` `data`可规定此节点的文本
+
+**例子：**创建一个p标签，设置calssName属性为JavaScript，创建一个文本节点"I love JavaScript"
+
+<img src="/Users/yz/Library/Application Support/typora-user-images/image-20200131220956026.png" alt="image-20200131220956026" style="zoom:50%;" />
+
+
+
