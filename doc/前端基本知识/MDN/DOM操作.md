@@ -317,3 +317,14 @@ removeChild() 方法从子节点列表中删除某个节点。如删除成功，
 
 
 
+### 浏览器可视区域
+
+在不同浏览器都适用的方案
+
+```javascript
+var w= document.documentElement.clientWidth
+      || document.body.clientWidth;
+var h= document.documentElement.clientHeight
+      || document.body.clientHeight;
+```
+
