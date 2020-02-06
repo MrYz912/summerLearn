@@ -1,5 +1,17 @@
 # DOM操作
 
+### DOM是什么
+
+文档对象模型(DOM)定义访问和处理HTML文档的标准方法。DOM将HTML文档呈现为带有元素、属性、文本的数结构(结构树)。简单来说，我们可以通过DOM来对HTML文档进行操作。
+
+
+
+### 获取元素的方法
+
+**getElementById()方法**
+
+
+
 ### getAttribute()方法
 
 通过元素节点的属性名称获取属性的值
@@ -14,7 +26,7 @@
 
 2.`name`为要想查询的元素节点的名字
 
-**例子：**
+**例子：**使用`getAttribute()`获取LI标签的title值。
 
 ```html
 <ul>  
@@ -50,7 +62,9 @@
 
 2.`value`：要设置的属性值
 
-**例子：**
+**例子：**使用`getAttribute()`方法获取元素属性值，保存在变量`text`。
+
+​			使用`setAttribute()`方法设置title属性值。
 
 ```html
   <ul>  
@@ -86,7 +100,7 @@ DOM 节点有三个重要的属性 ：
 
 3. nodeType ：节点的类型
 
-**例子：**
+**例子：**获取所有LI标签，并输出相应节点的名称，节点的值，节点的类型。
 
 ```html
   <ul>
@@ -114,7 +128,7 @@ DOM 节点有三个重要的属性 ：
 
 `elementNode.childNodes`
 
-**例子：**
+**例子：**获取子节点并输出相应属性
 
 ```html
 <div>
@@ -141,7 +155,7 @@ DOM 节点有三个重要的属性 ：
 
 `node.lastChild`
 
-**例子：**
+**例子：**找到指定元素(div)的第一个和最后一个子节点
 
 ```html
 <div id="con">
@@ -181,7 +195,7 @@ DOM 节点有三个重要的属性 ：
 
 `elementNode.parentNode`
 
-**例子：**
+**例子：**使用parentNode，将“HTML/CSS”课程内容输出
 
 ```html
 <ul id="con">
@@ -233,9 +247,9 @@ DOM 节点有三个重要的属性 ：
 
 `appendChild(newnode)`
 
-**例子：**
+**例子：**为UL标签添加一个新项PHP
 
-<img src="/Users/yz/Library/Application Support/typora-user-images/image-20200130155842541.png" alt="image-20200130155842541" style="zoom:50%;" />
+<img src="/Volumes/WindowsD/summerLearn/program/summerLearn/doc/前端基本知识/MDN/DOM操作.assets/image-20200130155842541-0983427.png" alt="image-20200130155842541" style="zoom:50%;" />
 
 
 
@@ -265,7 +279,7 @@ removeChild() 方法从子节点列表中删除某个节点。如删除成功，
 
 **例子：**通过清除按钮把节点清除
 
-<img src="/Users/yz/Library/Application Support/typora-user-images/image-20200130172406062.png" alt="image-20200130172406062" style="zoom:50%;" />
+<img src="/Volumes/WindowsD/summerLearn/program/summerLearn/doc/前端基本知识/MDN/DOM操作.assets/image-20200130172406062.png" alt="image-20200130172406062" style="zoom:50%;" />
 
 
 
@@ -283,7 +297,7 @@ removeChild() 方法从子节点列表中删除某个节点。如删除成功，
 
 **例子：**通过replaceChild()实现将b标签换成i标签
 
-<img src="/Users/yz/Library/Application Support/typora-user-images/image-20200131174434271.png" alt="image-20200131174434271" style="zoom:50%;" />
+<img src="/Volumes/WindowsD/summerLearn/program/summerLearn/doc/前端基本知识/MDN/DOM操作.assets/image-20200131174434271.png" alt="image-20200131174434271" style="zoom:50%;" />
 
 
 
@@ -299,7 +313,7 @@ removeChild() 方法从子节点列表中删除某个节点。如删除成功，
 
 **例子：**在HTML文档中创建一个慕课网的链接，并设置属性
 
-<img src="/Users/yz/Library/Application Support/typora-user-images/image-20200131215758809.png" alt="image-20200131215758809" style="zoom:50%;" />
+<img src="/Volumes/WindowsD/summerLearn/program/summerLearn/doc/前端基本知识/MDN/DOM操作.assets/image-20200131215758809.png" alt="image-20200131215758809" style="zoom:50%;" />
 
 
 
@@ -313,7 +327,7 @@ removeChild() 方法从子节点列表中删除某个节点。如删除成功，
 
 **例子：**创建一个p标签，设置calssName属性为JavaScript，创建一个文本节点"I love JavaScript"
 
-<img src="/Users/yz/Library/Application Support/typora-user-images/image-20200131220956026.png" alt="image-20200131220956026" style="zoom:50%;" />
+<img src="/Volumes/WindowsD/summerLearn/program/summerLearn/doc/前端基本知识/MDN/DOM操作.assets/image-20200131220956026.png" alt="image-20200131220956026" style="zoom:50%;" />
 
 
 
@@ -327,4 +341,46 @@ var w= document.documentElement.clientWidth
 var h= document.documentElement.clientHeight
       || document.body.clientHeight;
 ```
+
+
+
+**网页尺寸**
+
+scrollHeight和scrollWidth，获取网页内容高度和宽度(不包括边线)。
+
+在不同浏览器都适用的方案
+
+```javascript
+var w=document.documentElement.scrollWidth
+   || document.body.scrollWidth;
+var h=document.documentElement.scrollHeight
+   || document.body.scrollHeight;
+```
+
+
+
+**网页尺寸**
+
+获取网页内容高度和宽度(包括滚动条等边线，会随窗口的显示大小改变)。
+
+在不同浏览器都适用的方案
+
+```javascript
+var w= document.documentElement.offsetWidth
+    || document.body.offsetWidth;
+var h= document.documentElement.offsetHeight
+    || document.body.offsetHeight;
+```
+
+
+
+**网页卷去的距离和偏移量**
+
+<img src="/Volumes/WindowsD/summerLearn/program/summerLearn/doc/前端基本知识/MDN/DOM操作.assets/image-20200206180014604.png" alt="image-20200206180014604" style="zoom:45%;" />
+
+
+
+offsetLeft 和 offsetTop 用来得到对象的位置，到距离自身最近的（带有定位的）父元素的左侧/顶部 的距离，如果所有父级都没有定位则以body为准。
+
+scrollTop和scrollLeft被卷去部分的顶部/左侧到可视区域顶部/左侧 的距离。
 
