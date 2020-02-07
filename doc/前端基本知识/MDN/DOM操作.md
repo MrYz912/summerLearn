@@ -10,6 +10,48 @@
 
 **getElementById()方法**
 
+返回带有指定id的节点对象的集合
+
+**语法：** 
+
+`document.getElememtById("id")`
+
+**例子：** 获取id为con的p标签
+
+<img src="/Volumes/WindowsD/summerLearn/program/summerLearn/doc/前端基本知识/MDN/DOM操作.assets/image-20200207174233713.png" alt="image-20200207174233713" style="zoom:50%;" />
+
+
+
+**getElementsByName()方法**
+
+返回带有指定名称的节点对象的集合
+
+**语法：** 
+
+`document.getElementsByName(name)`
+
+**例子：** 获取name为myt的元素，同时输出获取的元素节点的长度
+
+<img src="/Volumes/WindowsD/summerLearn/program/summerLearn/doc/前端基本知识/MDN/DOM操作.assets/image-20200207175308416.png" alt="image-20200207175308416" style="zoom:50%;" />
+
+
+
+**getElementsByTagName()方法**
+
+返回带有指定标签名的节点对象的集合。返回元素的顺序是它们在文档中的顺序
+
+**语法：** 
+
+`document.getElementsByTagName(Tagname)`
+
+**例子：** 获取li标签并输出内容，长度
+
+<img src="/Volumes/WindowsD/summerLearn/program/summerLearn/doc/前端基本知识/MDN/DOM操作.assets/image-20200207180021563.png" alt="image-20200207180021563" style="zoom:50%;" />
+
+
+
+### innerHTML属性
+
 
 
 ### getAttribute()方法
