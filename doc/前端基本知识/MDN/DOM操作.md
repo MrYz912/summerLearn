@@ -98,7 +98,7 @@
 
 2.`name`为要想查询的元素节点的名字
 
-**例子：**使用`getAttribute()`获取LI标签的title值。
+**例子：** 使用`getAttribute()`获取LI标签的title值。
 
 ```html
 <ul>  
@@ -134,7 +134,7 @@
 
 2.`value`：要设置的属性值
 
-**例子：**使用`getAttribute()`方法获取元素属性值，保存在变量`text`。
+**例子：** 使用`getAttribute()`方法获取元素属性值，保存在变量`text`。
 
 ​			使用`setAttribute()`方法设置title属性值。
 
@@ -172,7 +172,7 @@ DOM 节点有三个重要的属性 ：
 
 3. nodeType ：节点的类型
 
-**例子：**获取所有LI标签，并输出相应节点的名称，节点的值，节点的类型。
+**例子：** 获取所有LI标签，并输出相应节点的名称，节点的值，节点的类型。
 
 ```html
   <ul>
@@ -200,7 +200,7 @@ DOM 节点有三个重要的属性 ：
 
 `elementNode.childNodes`
 
-**例子：**获取子节点并输出相应属性
+**例子：** 获取子节点并输出相应属性
 
 ```html
 <div>
@@ -227,7 +227,7 @@ DOM 节点有三个重要的属性 ：
 
 `node.lastChild`
 
-**例子：**找到指定元素(div)的第一个和最后一个子节点
+**例子：** 找到指定元素(div)的第一个和最后一个子节点
 
 ```html
 <div id="con">
@@ -267,7 +267,7 @@ DOM 节点有三个重要的属性 ：
 
 `elementNode.parentNode`
 
-**例子：**使用parentNode，将“HTML/CSS”课程内容输出
+**例子：** 使用parentNode，将“HTML/CSS”课程内容输出
 
 ```html
 <ul id="con">
@@ -319,7 +319,7 @@ DOM 节点有三个重要的属性 ：
 
 `appendChild(newnode)`
 
-**例子：**为UL标签添加一个新项PHP
+**例子：** 为UL标签添加一个新项PHP
 
 <img src="DOM操作.assets/image-20200130155842541-0983427.png" alt="image-20200130155842541-0983427" style="zoom:50%;" />
 
@@ -349,7 +349,7 @@ removeChild() 方法从子节点列表中删除某个节点。如删除成功，
 
 `nodeObject.removeChild(node)`
 
-**例子：**通过清除按钮把节点清除
+**例子：** 通过清除按钮把节点清除
 
 <img src="DOM操作.assets/image-20200130172406062.png" alt="image-20200130172406062" style="zoom:50%;" />
 
@@ -367,7 +367,7 @@ removeChild() 方法从子节点列表中删除某个节点。如删除成功，
 
 `node.replaceChild(newnode,oldnode)`
 
-**例子：**通过replaceChild()实现将b标签换成i标签
+**例子：** 通过replaceChild()实现将b标签换成i标签
 
 <img src="DOM操作.assets/image-20200131174434271.png" alt="image-20200131174434271" style="zoom:50%;" />
 
@@ -383,7 +383,7 @@ removeChild() 方法从子节点列表中删除某个节点。如删除成功，
 
 `document.createElement(tagName)；`  `tagName`用来指明创建元素的类型
 
-**例子：**在HTML文档中创建一个慕课网的链接，并设置属性
+**例子：** 在HTML文档中创建一个慕课网的链接，并设置属性
 
 <img src="DOM操作.assets/image-20200131215758809.png" alt="image-20200131215758809" style="zoom:50%;" />
 
@@ -397,7 +397,7 @@ removeChild() 方法从子节点列表中删除某个节点。如删除成功，
 
 `document.createTextNode(data);` `data`可规定此节点的文本
 
-**例子：**创建一个p标签，设置calssName属性为JavaScript，创建一个文本节点"I love JavaScript"
+**例子：** 创建一个p标签，设置calssName属性为JavaScript，创建一个文本节点"I love JavaScript"
 
 <img src="DOM操作.assets/image-20200131220956026.png" alt="image-20200131220956026" style="zoom:50%;" />
 
