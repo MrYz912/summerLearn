@@ -385,7 +385,7 @@ removeChild() 方法从子节点列表中删除某个节点。如删除成功，
 
 **例子：** 在HTML文档中创建一个慕课网的链接，并设置属性
 
-<img src="DOM操作.assets/image-20200131215758809.png" alt="image-20200131215758809" style="zoom:50%;" />
+<img src="./DOM操作.assets/image-20200131215758809.png" alt="image-20200131215758809" style="zoom:50%;" />
 
 
 
