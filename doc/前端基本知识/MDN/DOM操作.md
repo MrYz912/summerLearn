@@ -18,7 +18,7 @@
 
 **例子：** 获取id为con的p标签
 
-<img src="/Volumes/WindowsD/summerLearn/program/summerLearn/doc/前端基本知识/MDN/DOM操作.assets/image-20200207174233713.png" alt="image-20200207174233713" style="zoom:50%;" />
+<img src="DOM操作.assets/image-20200207174233713.png" alt="image-20200207174233713" style="zoom:50%;" />
 
 
 
@@ -32,7 +32,7 @@
 
 **例子：** 获取name为myt的元素，同时输出获取的元素节点的长度
 
-<img src="/Volumes/WindowsD/summerLearn/program/summerLearn/doc/前端基本知识/MDN/DOM操作.assets/image-20200207175308416.png" alt="image-20200207175308416" style="zoom:50%;" />
+<img src="DOM操作.assets/image-20200207175308416.png" alt="image-20200207175308416" style="zoom:50%;" />
 
 
 
@@ -46,7 +46,7 @@
 
 **例子：** 获取li标签并输出内容，长度
 
-<img src="/Volumes/WindowsD/summerLearn/program/summerLearn/doc/前端基本知识/MDN/DOM操作.assets/image-20200207180021563.png" alt="image-20200207180021563" style="zoom:50%;" />
+<img src="DOM操作.assets/image-20200207180021563.png" alt="image-20200207180021563" style="zoom:50%;" />
 
 
 
@@ -56,7 +56,7 @@
 
 **例子：** 修改h2标签内容并输出
 
-<img src="/Volumes/WindowsD/summerLearn/program/summerLearn/doc/前端基本知识/MDN/DOM操作.assets/image-20200211162838885.png" alt="image-20200211162838885" style="zoom:50%;" />
+<img src="DOM操作.assets/image-20200211162838885.png" alt="image-20200211162838885" style="zoom:50%;" />
 
 
 
@@ -68,7 +68,7 @@
 
 **基本属性表(prorperty)**
 
-<img src="/Volumes/WindowsD/summerLearn/program/summerLearn/doc/前端基本知识/MDN/DOM操作.assets/image-20200211170331633.png" alt="image-20200211170331633" style="zoom:50%;" />
+<img src="DOM操作.assets/image-20200211170331633.png" alt="image-20200211170331633" style="zoom:50%;" />
 
 
 
@@ -80,7 +80,7 @@
 
 **value取值：** 
 
-<img src="/Volumes/WindowsD/summerLearn/program/summerLearn/doc/前端基本知识/MDN/DOM操作.assets/image-20200211170803780.png" alt="image-20200211170803780" style="zoom:50%;" />
+<img src="DOM操作.assets/image-20200211170803780.png" alt="image-20200211170803780" style="zoom:50%;" />
 
 
 
@@ -321,7 +321,7 @@ DOM 节点有三个重要的属性 ：
 
 **例子：**为UL标签添加一个新项PHP
 
-<img src="/Volumes/WindowsD/summerLearn/program/summerLearn/doc/前端基本知识/MDN/DOM操作.assets/image-20200130155842541-0983427.png" alt="image-20200130155842541" style="zoom:50%;" />
+<img src="DOM操作.assets/image-20200130155842541-0983427.png" alt="image-20200130155842541-0983427" style="zoom:50%;" />
 
 
 
@@ -351,7 +351,7 @@ removeChild() 方法从子节点列表中删除某个节点。如删除成功，
 
 **例子：**通过清除按钮把节点清除
 
-<img src="/Volumes/WindowsD/summerLearn/program/summerLearn/doc/前端基本知识/MDN/DOM操作.assets/image-20200130172406062.png" alt="image-20200130172406062" style="zoom:50%;" />
+<img src="DOM操作.assets/image-20200130172406062.png" alt="image-20200130172406062" style="zoom:50%;" />
 
 
 
@@ -369,7 +369,7 @@ removeChild() 方法从子节点列表中删除某个节点。如删除成功，
 
 **例子：**通过replaceChild()实现将b标签换成i标签
 
-<img src="/Volumes/WindowsD/summerLearn/program/summerLearn/doc/前端基本知识/MDN/DOM操作.assets/image-20200131174434271.png" alt="image-20200131174434271" style="zoom:50%;" />
+<img src="DOM操作.assets/image-20200131174434271.png" alt="image-20200131174434271" style="zoom:50%;" />
 
 
 
@@ -385,7 +385,7 @@ removeChild() 方法从子节点列表中删除某个节点。如删除成功，
 
 **例子：**在HTML文档中创建一个慕课网的链接，并设置属性
 
-<img src="/Volumes/WindowsD/summerLearn/program/summerLearn/doc/前端基本知识/MDN/DOM操作.assets/image-20200131215758809.png" alt="image-20200131215758809" style="zoom:50%;" />
+<img src="DOM操作.assets/image-20200131215758809.png" alt="image-20200131215758809" style="zoom:50%;" />
 
 
 
@@ -399,7 +399,7 @@ removeChild() 方法从子节点列表中删除某个节点。如删除成功，
 
 **例子：**创建一个p标签，设置calssName属性为JavaScript，创建一个文本节点"I love JavaScript"
 
-<img src="/Volumes/WindowsD/summerLearn/program/summerLearn/doc/前端基本知识/MDN/DOM操作.assets/image-20200131220956026.png" alt="image-20200131220956026" style="zoom:50%;" />
+<img src="DOM操作.assets/image-20200131220956026.png" alt="image-20200131220956026" style="zoom:50%;" />
 
 
 
@@ -448,7 +448,7 @@ var h= document.documentElement.offsetHeight
 
 **网页卷去的距离和偏移量**
 
-<img src="/Volumes/WindowsD/summerLearn/program/summerLearn/doc/前端基本知识/MDN/DOM操作.assets/image-20200206180014604.png" alt="image-20200206180014604" style="zoom:45%;" />
+<img src="DOM操作.assets/image-20200206180014604.png" alt="image-20200206180014604" style="zoom:45%;" />
 
 
 
