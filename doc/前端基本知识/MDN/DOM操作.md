@@ -52,6 +52,36 @@
 
 ### innerHTML属性
 
+用于获取或替换HTML元素的内容
+
+**例子：** 修改h2标签内容并输出
+
+<img src="/Volumes/WindowsD/summerLearn/program/summerLearn/doc/前端基本知识/MDN/DOM操作.assets/image-20200211162838885.png" alt="image-20200211162838885" style="zoom:50%;" />
+
+
+
+### 改变HTML样式
+
+**语法：** 
+
+`Object.style.property = new style` Object 是获取的元素对象
+
+**基本属性表(prorperty)**
+
+<img src="/Volumes/WindowsD/summerLearn/program/summerLearn/doc/前端基本知识/MDN/DOM操作.assets/image-20200211170331633.png" alt="image-20200211170331633" style="zoom:50%;" />
+
+
+
+### 显示与隐藏（display属性）
+
+**语法：** 
+
+`Object.style.display = value`
+
+**value取值：** 
+
+<img src="/Volumes/WindowsD/summerLearn/program/summerLearn/doc/前端基本知识/MDN/DOM操作.assets/image-20200211170803780.png" alt="image-20200211170803780" style="zoom:50%;" />
+
 
 
 ### getAttribute()方法
