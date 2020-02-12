@@ -18,7 +18,7 @@
 
 **例子：** 获取id为con的p标签
 
-<img src="https://tva1.sinaimg.cn/large/0082zybpgy1gbtoxtbchbj30pw06egn0.jpg" style="zoom:10%;" />
+<img src="https://tva1.sinaimg.cn/large/0082zybpgy1gbtoxtbchbj30pw06egn0.jpg" style="zoom:50%;" />
 
 
 
