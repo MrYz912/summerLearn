@@ -80,7 +80,7 @@
             data:"333"
         }]
     }
-    let{title:estitle,test:[{title:cntitle}]} = metadata;
-    console.log(estitle,cntitle);
+    let{title:esTitle,test:[{title:cnTitle}]} = metadata;
+    console.log(esTitle,cnTitle);
     
 }
