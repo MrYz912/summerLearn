@@ -42,4 +42,22 @@
     console.log("字符串",Object.is('abc','abc'),'abc'==='abc');//相当于===
     console.log("数组",Object.is([],[]),[]===[]);//数组为引用型，地址不一样
     
+    let copyA = {
+        a:'a'
+    };
+    let copyB = {
+        b:'b',
+        arr:[1,2,[3,4]]
+    };
+    console.log("拷贝",Object.assign(copyA,copyB));//浅拷贝方法，只复制一层对象的属性
+    
+    let test = {k:123,o:456};
+    for(let [key, value] of Object.entries(test)){//遍历，跟数组的用法差不多
+        console.log([key,value]);
+    }
+}
+
+{//扩展运算符
+    let {a, b, ...c} ={a:'aaa',b:'bbb',c:'ccc',d:'ddd'};
+    console.log(c);//c={c:'ccc',d:'ddd'}
 }
