@@ -43,3 +43,13 @@
 
     list.forEach(function(item){console.log(item);});
 }
+
+{
+    let weakList = new WeakSet();//WeakSet只能放对象，没有clear方法，没有size属性，不能遍历
+    let arg = {};
+    weakList.add(arg);
+
+    //weakList.add(2);
+
+    console.log('weakList',weakList);
+}
