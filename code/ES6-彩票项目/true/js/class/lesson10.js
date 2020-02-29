@@ -107,7 +107,63 @@
     let set = new Set();
     let array = [];
 
-    set.add({t:1});
+    //增
+    set.add(item={t:1});
     array.push({t:1});
+
     console.info('set-array',set,array);
+
+    //查
+    let set_exist = set.has(item);
+    let array_exist = array.find(item => item.t);
+    
+    console.info('set-array',set_exist,array_exist);
+
+    //改
+    set.forEach(item=>item.t ? item.t=2:'');
+    array.forEach(item=>item.t ? item.t=2 :'');
+
+    console.info('set-array-modify',set,array);
+
+    //删
+    set.forEach(item=>item.t? set.delete(item):'');
+    let index = array.findIndex(item => item.t);
+    array.splice(index);
+
+    console.info('set-array-delete',set, array);
+}
+
+{//set,map,object对比
+    let item = {t:1};
+    let set = new Set();
+    let map = new Map();
+    let obj = {};
+
+    //增
+    set.add(item);
+    map.set('t',1);
+    obj.t = 1;
+    
+    console.info('set-map-obj',set, map, obj);
+
+    //查
+    console.info({
+        map_exist:map.has('t'),
+        set_exist:set.has(item),
+        obj_exist:'t' in obj
+    })
+
+    //改
+    map.set('t',2);
+    item.t = 2;
+    obj.t = 2;
+    
+    console.info('set-map-obj',set, map, obj);
+
+    //删
+    map.delete('t');
+    set.delete(item);
+    delete obj.t;
+    console.info('set-map-obj',set, map, obj);
+
 }
