@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello world</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="app">{{content}}</div>
+
+    <script>
+        var app = new Vue({
+            el:"#app",//声明Vue实例掌控的DOM节点
+            data: {
+                content: 'hello world'
+            }
+        })
+
+        setTimeout(function(){
+            app.$data.content = 'bye world';
+        },2000)//不需要操作DOM
+    </script>
+
+</body>
+</html>

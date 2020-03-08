@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TodoList</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model="inputValue">
+        <!-- 双向绑定，当Vue实例中变化了，这里也会变，这里变了，Vue实例也会变 -->
+        <button v-on:click="handleBtnClick">提交</button>
+        <!-- 实现Vue实例里的方法 -->
+        <ul>
+            <!-- <li v-for="item in List">{{item}}</li> -->
+            <!-- 循环data里的List -->
+            <todo-item  v-bind:content="item" 
+                        v-bind:index="index" 
+                        v-for="(item,index) in List"
+                        @delete="handleDelete">
+                <!-- v-bind 给子组件传值 -->
+            </todo-item>
+        </ul>
+    </div>
+
+    <script>
+
+        // Vue.component("TodoItem",{//全局组件
+        //     props:['content'],//接收父组件传过来的值
+        //     template:"<li>{{content}}</li>",//组件模板
+        // })
+
+        var TodoItem = {//局部组件
+            props:['content', 'index'],
+            template:"<li @click='handleItemClick'>{{content}}</li>",//@ = v-on监听事件 :=v-bind向子组件传值
+            methods: {
+                handleItemClick:function(){
+                    this.$emit("delete",this.index);//子组件向父组件传值
+                }
+            }
+        }
+
+        var app = new Vue({
+            el:"#app",
+            components:{//要在Vue实例中声明
+                TodoItem:TodoItem
+            },
+            data: {
+                List: [],
+                inputValue: ''
+            },
+            methods: {
+                handleBtnClick:function() {
+                    this.List.push(this.inputValue);
+                    this.inputValue = '';
+                },
+                handleDelete: function(index) {
+                    this.List.splice(index,1);
+                }
+            }
+        })
+    </script>
+</body>
+</html>
