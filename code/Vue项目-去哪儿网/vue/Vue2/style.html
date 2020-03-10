@@ -3,16 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <title>Vue中的样式绑定</title>
+    <style>
+        .active {
+            color: red;
+        }
+        .actived {
+            color: red;
+        }
+    </style>
     <script src="../vue.js"></script>
 </head>
 <body>
     <div id="app">
-        Hello World
+        <!-- 方法一 绑定class对象 -->
+        <div @click="handleClick" :class="{active:isActive}">
+            Hello World
+        </div>
+        <br>
+        <!-- 方法二 绑定class数组 -->
+        <div @click="handleDivClick" :class="[actived]">
+            Hello World
+        </div>
+        <br>
+        <!-- 方法三 直接用内联绑定样式，也有绑定对象的方法 -->
+        <div :style="[styleObj]" @click="handleStyle">
+            Hello World
+        </div>
     </div>
 
     <script>
         var vm = new Vue({
             el:"#app",
+            data: {
+                isActive: false,
+                actived: "",
+                styleObj: {
+                    color: "black"
+                }
+            },
+            methods: {
+                handleClick: function() {//方法一
+                    this.isActive = !this.isActive;
+                },
+                handleDivClick: function() {//方法二
+                    this.actived = this.actived === "actived" ?
+                        "" : "actived";
+                },
+                handleStyle: function() {//方法三
+                    this.styleObj.color = this.styleObj.color === "black"
+                        ? "red" : "black";
+                }
+            }
         })
     </script>
 </body>

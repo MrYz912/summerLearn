@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue中的条件渲染</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- v-if的返回值决定这个标签是否展示，false时不添加DOM元素 -->
+        <div v-if="show">{{content}}</div>
+        <!-- 和v-if功能一样，但是false时是隐藏标签 -->
+        <div v-show="show">{{content}}</div>
+        <br>
+        <div v-if="look === 'a'">show</div>
+        <div v-else-if="look === 'b'">hi</div>
+        <div v-else>hello</div>
+        <br>
+        <!-- key值 -->
+        <div v-if="show">
+            用户名：<input key="username">
+        </div>
+        <div v-else>
+            <!-- key值不一样就不会被复用，没有key值会被复用 -->
+            邮箱名：<input key="password">
+        </div>
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el:"#app",
+            data: {
+                show: false,
+                look: "a",
+                content: "Hello World"
+            }
+        })
+    </script>
+</body>
+</html>
