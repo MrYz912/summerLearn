@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>组件使用中的细节点</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <table>
+            <tbody>
+                <!-- 遇到要使用组件，但又不允许直接写组件时可以用is来指定组件 -->
+                <tr is="row"></tr>
+                <tr is="row"></tr>
+                <tr is="row"></tr>
+            </tbody>
+        </table>
+        <br>
+        <!-- ref放在div时为所在的DOM节点，在组件时，为指向的引用 -->
+        <counter ref="one" @change="handleChange"></counter>
+        <counter ref="two" @change="handleChange"></counter>
+        <div>{{total}}</div>
+    </div>
+    <script>
+
+        Vue.component('row',{//子组件里的data必须是一个函数
+            data: function() {
+                return {
+                    content: "this is a row"
+                }
+            },
+            template : '<tr><td>{{content}}</td></tr>'
+        })
+
+        Vue.component('counter',{
+            template: "<div @click='handleClick'>{{number}}</div>",
+            data: function() {
+                return {
+                    number: 0
+                }
+            },
+            methods: {
+                handleClick: function() {
+                    this.number++;
+                    this.$emit("change");//子组件通过事件触发的方式传值给父组件
+                }
+            }
+        })
+
+        var vm = new Vue({
+            el: "#root",
+            data: {
+                total: 0
+            },
+            methods: {
+                handleChange: function() {
+                    this.total = this.$refs.one.number + this.$refs.two.number;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

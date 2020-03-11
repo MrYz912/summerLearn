@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue中的列表渲染</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- 将列表循环渲染出来，使用唯一的key值提高性能 -->
+        <div v-for="(item,index) of list"
+            :key="item.id">
+            {{item.text}} ---- {{index}}
+        </div>
+        <!-- 省去一个div包裹，用template不会被显示 -->
+        <template v-for="(item,index) of list" :key="item.id">
+            <div>
+                {{item.text}} ---- {{index}}
+            </div>
+            <span>
+                {{item.text}}
+            </span>
+        </template>
+        <br>
+        <br>
+        <div v-for="(item, key ,index) of user">
+            {{item}}
+        </div>
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el:"#app",
+            data: {
+                //循环数组
+                list: [{//一般后端传回来的数据
+                        id: "01012021",
+                        text: "hello"
+                    }, {
+                        id: "01012022",
+                        text: "zhen"
+                    }, {
+                        id: "01012023",
+                        text: "yang"
+                    }
+                ],
+                //循环对象,改值时要改整个引用
+                user: { 
+                    name: "yang",
+                    age : "21",
+                    gender: "male"
+                }
+            }
+        })
+    </script>
+</body>
+</html>
