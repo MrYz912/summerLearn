@@ -41,3 +41,24 @@
 
 - `Vue.set(object, key, value)` 全局的方法
 - `vm.set(object, key, value)` 实例的方法
+
+
+
+在子组件中监听事件使用`.native`可以绑定原生事件
+
+```html
+<div id="app">
+  <div @click.native="handleClick"></div>
+</div>
+<script>
+	var vm = new Vue({
+    el:"app",
+    methods:{
+      handleClick: function() {
+        alert("hello world");
+      }
+    }
+  });
+</script>
+```
+

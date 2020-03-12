@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue中的插槽(slot)</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <child>
+            <!-- 通过插槽就可以直接向子组件传递DOM -->
+            <p>yang</p>
+        </child>
+
+        <body-content>
+            <!-- 具名插槽，给定插槽名字就可以同时传递多个DOM -->
+            <div class="header" slot="header">header</div>
+            <div class="footer" slot="footer">footer</div>
+        </body-content>
+    </div>
+
+    <script>
+
+        Vue.component('child', {
+            template: 
+                `<div>
+                    <P>Hello</P>
+                    <slot></slot>
+                </div>`
+        })
+
+        Vue.component('body-content', {
+            template:
+                `<div>
+                    <slot name="header"></slot>
+                    <div class='content'>content</div>
+                    <slot name="footer"></slot>
+                </div>`
+        })
+
+        var vm = new Vue({
+            el:"#root"
+        })
+    </script>
+</body>
+</html>

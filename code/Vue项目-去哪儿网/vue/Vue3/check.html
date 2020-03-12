@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>组件参数检验与非Props特性</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <child content="hello world"></child>
+    </div>
+
+    <script>
+
+        Vue.component('child',{
+            props: {
+                //content: [ Number,String ]//限制传进来的值为字符串和数字类型
+                content: {
+                    type: String,//限制类型
+                    required: false,//限制是否必须传
+                    default: "this is default",//不传时的默认值
+                    validator: function(value) {//校验，可以进一步限制
+                        return (value.length > 5);
+                    }
+                }
+            },
+            template: "<div>{{content}}</div>"
+        })
+
+        var vm = new Vue({
+            el:"#root",
+        })
+    </script>
+</body>
+</html>
