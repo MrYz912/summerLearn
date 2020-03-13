@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue中的作用域插槽</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <child>
+            <!-- 声明接收子组件传过来的值的属性，可以由父组件指定渲染形式 -->
+            <template slot-scope="props">
+                <h1>{{props.item}}</h1>
+            </template>
+        </child>
+    </div>
+
+    <script>
+
+        Vue.component('child', {
+            data: function() {
+                return {
+                    list: [1, 2, 3, 4]
+                }
+            },
+            template: // 给子组件传值
+            `<div>
+                <ul>
+                    <slot v-for="item of list" :item=item></slot>
+                </ul>
+            </div>`
+        })
+
+        var vm = new Vue({
+            el:"#root"
+        })
+    </script>
+</body>
+</html>
