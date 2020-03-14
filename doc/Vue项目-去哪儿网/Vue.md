@@ -62,3 +62,45 @@
 </script>
 ```
 
+
+
+## Vue中动画特效
+
+### 过渡
+
+- 显示
+
+```html
+<transition name="fade">
+  <div v-if="show">hello world</div>
+</transition>
+```
+
+在显示第一帧动画前，会在transition标签里的标签添加 `fade-enter` 和`fade-enter-active` 两个class，在加载第一帧后，`fade-enter` 会被销毁，一直到动画完成，`fade-enter-active` 才被销毁。可以在css中设置效果
+
+```css
+.fade-enter {
+  opacity: 0;
+}
+.fade-enter-active {
+  transition: opacity 2s;
+}
+```
+
+
+
+- 消失
+
+在消失第一帧动画前，会在transition标签里的标签添加 `fade-leave-to` 和 `fade-leave-active` 两个class，在
+
+消失第一帧动画后，`fade-leave-to` 会被销毁，一直到动画完成，`fade-leave-active` 才会被销毁
+
+```css
+.fade-leave-to {
+  opacity: 0;
+}
+.fade-leave-active {
+	transition: opacity 2s;
+}
+```
+
