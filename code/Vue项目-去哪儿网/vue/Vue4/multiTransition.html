@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue中多个元素或组件的过渡</title>
+    <script src="../vue.js"></script>
+    <style>
+        .fade-enter,.fade-leave-to {
+            opacity: 0;
+        }
+        .fade-enter-active,
+        .fade-leave-active {
+            transition: opacity 1s;
+        }
+    </style>
+</head>
+<body>
+    <div id="root">
+        <transition name="fade" mode="out-in">
+            <!-- 多个元素或组件之间过渡用mode指定过渡方式 -->
+            <!-- <div v-if="show" key="hello">Hello World</div>
+            <div v-else key="bye">Bye World</div> -->
+            <component :is="type"></component>
+        </transition>
+        <button @click="handleClick">切换</button>
+    </div>
+
+    <script>
+
+        Vue.component('child', {
+            template: "<div>child</div>"
+        })
+
+        Vue.component('child-one', {
+            template: "<div>child-one</div>"
+        })
+
+        var vm = new Vue({
+            el: "#root",
+            data: {
+                show: true,
+                type: 'child'
+            },
+            methods: {
+                handleClick: function() {
+                    this.show = !this.show;
+                    this.type = this.type === 'child' ? 'child-one' : 'child';
+                }
+            }
+        })
+    </script>
+</body>
+</html>
