@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue中的动画封装</title>
+    <script src="../vue.js"></script>
+    <style>
+    .v-enter,.v-leave-to {
+        opacity: 0;
+    }
+    .v-enter-active,.v-leave-active {
+        transition: opacity 1s;
+    }
+    </style>
+</head>
+<body>
+    <div id="root">
+        <fade :show="show">
+            <div>hello world</div>
+        </fade>
+        <button @click="handleClick">切换</button>
+    </div>
+
+    <script>
+
+        Vue.component('fade', {//可以将元素以模板的形式写，使用js的样式就可以完全封装在组件里面
+            props: ['show'],
+            template: `
+            <transition @before-enter="handleBeforeEnter"
+                @enter="handleEnter">
+                <slot v-if="show"></slot>
+            </transition>
+            `,
+            methods: {
+                handleBeforeEnter: function(el) {
+                    el.style.color = 'red'
+                },
+                handleEnter: function(el,done) {
+                    setTimeout(function() {
+                        el.style.color = 'green'
+                        done();
+                    },2000)
+                }
+            }
+        })
+
+        var vm = new Vue({
+            el: "#root",
+            data: {
+                show: true
+            },
+            methods: {
+                handleClick: function() {
+                    this.show = !this.show;
+                }
+            }
+        })
+    </script>
+</body>
+</html>
