@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Document</title>
+  <script src="../vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    {{fullName}}
+    <div>firstName：<input v-model="firstName"/></div>
+    <div>lastName：<input v-model="lastName"/></div>
+    <div>brotherFirstName：<input v-model="brother.firstName"/></div>
+    {{brother.firstName}}
+    {{time}}
+  </div>
+  <script>
+    var vm = new Vue({
+      el: "#app",
+      data: {
+        firstName: "zhen",
+        lastName: "yang",
+        fullName: "zhen yang",
+        time: [],
+        brother: {
+          firstName: "san"
+        }
+      },
+      watch: {
+        time: {
+          handler: function() {
+            time.push(this.firstName)
+            console.log('time')
+          }
+        }
+      }
+    })
+  </script>
+</body>
+</html>
