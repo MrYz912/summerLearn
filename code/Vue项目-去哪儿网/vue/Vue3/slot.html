@@ -14,8 +14,12 @@
 
         <body-content>
             <!-- 具名插槽，给定插槽名字就可以同时传递多个DOM -->
-            <div class="header" slot="header">header</div>
-            <div class="footer" slot="footer">footer</div>
+            <template v-slot:header>
+              <div class="header">header</div>
+            </template>
+            <template #footer>
+              <div class="footer">footer</div>
+            </template>
         </body-content>
     </div>
 
